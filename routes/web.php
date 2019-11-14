@@ -12,5 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+Route::get('/about_me', function () {
+    return view('about_me');
+});
+
+Route::get('/archive', function () {
+    return view('archive');
+});
+
+Route::get('/tag', function () {
+    return view('tag');
+});
+
+Route::get('/tag', function () {
+    return view('tag');
 });
