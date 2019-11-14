@@ -27,6 +27,14 @@ Route::get('/tag', function () {
     return view('tag');
 });
 
-Route::get('/tag', function () {
-    return view('tag');
+Route::get('/admin/about_me', function () {
+    return view('admin.about_me');
+});
+
+Route::get('/admin/tag', function () {
+    return view('admin.tag');
+});
+
+Route::get('/admin/post', function () {
+    return view('admin.post');
 });
