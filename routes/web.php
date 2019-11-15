@@ -36,5 +36,9 @@ Route::get('/admin/tag', function () {
 });
 
 Route::get('/admin/post', function () {
+    return view('admin.postlist');
+});
+
+Route::get('/admin/post/{id}',function(){
     return view('admin.post');
 });

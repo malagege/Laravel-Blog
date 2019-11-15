@@ -21,10 +21,9 @@
           後台管理
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">文章</a>
-          <a class="dropdown-item" href="#">歸檔</a>
-          <a class="dropdown-item" href="#">標籤</a>
-          <a class="dropdown-item" href="#">有關於我</a>
+          <a class="dropdown-item" href="{{url('admin/post')}}">文章</a>
+          <a class="dropdown-item" href="{{url('admin/tag')}}">標籤</a>
+          <a class="dropdown-item" href="{{url('admin/about_me')}}">有關於我</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">登出</a>
         </div>
