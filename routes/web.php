@@ -12,15 +12,30 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+
+    $user = \App\User::find(1);
+    $posts = $user->posts;
+
+    return view('home')->with('user',$user)->with('posts',$posts);
 });
 
 Route::get('/about_me', function () {
-    return view('about_me');
+    
+    $user = \App\User::find(1);
+
+    return view('about_me')->with('user',$user);
 });
 
 Route::get('/archive', function () {
-    return view('archive');
+
+    $user = \App\User::find(1);
+    $posts = $user->posts;
+
+    $group_posts = $posts->groupBy(function($item,$key){
+        return substr($item->created_at,0,7);
+    });
+
+    return view('archive')->with('group_posts',$group_posts);
 });
 
 Route::get('/tag', function () {
@@ -42,3 +57,6 @@ Route::get('/admin/post', function () {
 Route::get('/admin/post/{id}',function(){
     return view('admin.post');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
